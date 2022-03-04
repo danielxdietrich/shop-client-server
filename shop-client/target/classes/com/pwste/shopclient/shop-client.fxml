@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="480.0" minWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pwste.shopclient.controllers.ShopClientController">
+      <MenuBar VBox.vgrow="ALWAYS">
+          <menus>
+              <Menu mnemonicParsing="false" text="Plik">
+                  <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onClose" text="Zakończ" />
+                  </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Edycja">
+                  <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onAddToBasket" text="Dodaj do koszyka" />
+               <MenuItem mnemonicParsing="false" text="Usuń z koszyka" />
+                  </items>
+              </Menu>
+          </menus>
+      </MenuBar>
+
+    <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="480.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+        <children>
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="SKLEP - KLIENT">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+            <HBox prefWidth="200.0" VBox.vgrow="SOMETIMES">
+                <children>
+                    <VBox alignment="CENTER" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label text="Lista produktów" />
+                        </children>
+                    </VBox>
+                    <VBox alignment="CENTER" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label text="Koszyk" />
+                        </children>
+                    </VBox>
+                </children>
+                <VBox.margin>
+                    <Insets bottom="5.0" top="5.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                <children>
+                    <ListView id="listViewProducts" fx:id="listViewProducts" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                    <ListView id="listViewBasket" fx:id="listViewBasket" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets left="5.0" />
+                        </HBox.margin>
+                    </ListView>
+                </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="SOMETIMES">
+                <children>
+                    <HBox prefWidth="200.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Button id="buttonProductsRefresh" fx:id="buttonProductsRefresh" mnemonicParsing="false" onMouseClicked="#onGetProducts" text="Zaktualizuj listę produktów" />
+                     <HBox HBox.hgrow="ALWAYS" />
+                     <ProgressBar id="progressBar" fx:id="progressBar" prefHeight="20.0" progress="0.0" HBox.hgrow="ALWAYS">
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                        <HBox.margin>
+                           <Insets top="2.0" />
+                        </HBox.margin></ProgressBar>
+                        </children>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label text="Koszt:">
+                                <font>
+                                    <Font name="Monospaced Regular" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label id="labelMoneyTotal" fx:id="labelCostTotal" text="0">
+                                <font>
+                                    <Font name="Monospaced Regular" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label text="zł">
+                                <font>
+                                    <Font name="Monospaced Regular" size="14.0" />
+                                </font>
+                            </Label>
+                            <HBox HBox.hgrow="ALWAYS" />
+                            <Button fx:id="buttonOrderNew" alignment="TOP_LEFT" mnemonicParsing="false" onMouseClicked="#onNewOrder" text="Złóż zamówienie" />
+                        </children>
+                    </HBox>
+                </children>
+                <VBox.margin>
+                    <Insets top="5.0" />
+                </VBox.margin>
+            </HBox>
+        </children>
+        <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+        </padding>
+    </VBox>
+   <HBox />
+</VBox>
